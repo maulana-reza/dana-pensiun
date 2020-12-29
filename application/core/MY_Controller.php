@@ -38,7 +38,7 @@ class MY_Controller extends CI_Controller
         $this->redirect_login=$this->config->item('redirect_login', 'ion_auth');
         $this->redirect_not_login=$this->config->item('redirect_not_login', 'ion_auth');
 
-        if (!self::getTemplateDefault()) self::setTemplateDefault('default');
+        if (!self::getTemplateDefault()) self::setTemplateDefault('dp-pertamina');
     }
 
     public function render($view_name, $template=FALSE, $return=FALSE) {
