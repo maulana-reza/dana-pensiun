@@ -334,7 +334,7 @@ class Ion_auth
 		$this->session->unset_userdata([$identity, 'id', 'user_id']);
 
 		// delete the remember me cookies if they exist
-		delete_cookie($this->config->item('remember_cookie_name', 'ion_auth'));
+		delete_cookie($this->config->item('remember_cookie_name'));
 
 		// Clear all codes
 		$this->ion_auth_model->clear_forgotten_password_code($identity);

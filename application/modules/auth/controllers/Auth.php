@@ -100,6 +100,7 @@ class Auth extends HOME_Controller
 				'name' => 'identity',
 				'id' => 'identity',
 				'type' => 'text',
+				'class' => 'um-form-field valid ',
 				'value' => $this->form_validation->set_value('identity'),
 			];
 
@@ -107,6 +108,7 @@ class Auth extends HOME_Controller
 				'name' => 'password',
 				'id' => 'password',
 				'type' => 'password',
+				'class' => 'um-form-field valid ',
 			];
 			$this->addMultipleData($this->data);
 			$this->render( 'login');

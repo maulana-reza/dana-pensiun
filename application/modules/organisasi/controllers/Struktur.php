@@ -22,6 +22,11 @@ class Struktur extends HOME_Controller
 	 */
 	public function index()
 	{
+
+		$this->db->select('jabatan.name as jabatan_name,organization_structure.*');
+		$this->db->join('jabatan','jabatan.id = organization_structure.jabatan_id');
+		$this->addData('image_jabatan',$this->db->get('organization_structure')->result_array());
+		$this->addData('jabatan',$this->db->get('jabatan')->result_array());
 		$this->render('index');
 	}
 }

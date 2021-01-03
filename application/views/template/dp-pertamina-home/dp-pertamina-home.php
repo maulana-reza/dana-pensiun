@@ -24,7 +24,7 @@
 	<link rel="apple-touch-icon" sizes="152x152"
 		  href="<?= base_url('assets/templates/dp-pertamina/wp-content'); ?>/uploads/2018/09/logo-only-e1537362947964.png">
 
-	<title>Visi &#038; Misi &#8211; Danapen KF</title>
+	<title><?= title(@$title);?></title>
 	<link rel='dns-prefetch' href='../../external.html?link=http://www.google.com/'/>
 	<link rel='dns-prefetch' href='../../external.html?link=http://s.w.org/'/>
 	<link rel="alternate" type="application/rss+xml" title="Danapen KF &raquo; Feed" href="../feed/index.html"/>
@@ -516,20 +516,7 @@
 
 					<div class="header-right">
 						<div class="header-right-top">
-							<div class="header-contact">
-								<ul class="nav nav-pills nav-top">
-									<li class="">
-										<a class="btn btn-xs btn-outline-primary btn-register" href="<?= site_url('auth/register');?>" =
-										=""><i class="fa fa-user"></i>Register <span
-											class="d-none d-sm-inline">Peserta</span></a>
-									</li>
-									<li class="">
-										<a class="btn btn-xs btn-primary btn-login" href="<?= site_url('auth/login');?>"><i
-												class="fa fa-sign-in"></i>Login Peserta</a>
-									</li>
-
-								</ul>
-							</div>
+                            <?php get_instance()->load->view('template/dp-pertamina/button-login'); ?>
 							<div class="searchform-popup">
 								<a class="search-toggle"><i class="fa fa-search"></i></a>
 								<form action="../../external.html?link=https://danapen/" method="get"

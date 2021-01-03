@@ -84,7 +84,6 @@ class CI_Config {
 	public function __construct()
 	{
 		$this->config =& get_config();
-
 		// Set the base_url automatically if none was provided
 		if (empty($this->config['base_url']))
 		{
@@ -196,6 +195,7 @@ class CI_Config {
 	 */
 	public function item($item, $index = '')
 	{
+
 		if ($index == '')
 		{
 			return isset($this->config[$item]) ? $this->config[$item] : NULL;
