@@ -30,7 +30,7 @@ class Berita extends HOME_Controller
 		$this->db->join('users','users.id = article.user_id');
 		$count = $this->db->get('article')->num_rows();
 
-		$data = pagination($count,'artikel/berita/index',3,5);
+		$data = pagination($count,'artikel/berita/index',4,5);
 		$this->db->select('article.*,users.first_name,users.last_name');
 		$this->db->join('users','users.id = article.user_id');
 		$article = $this->db->get('article',5,$data['page'])->result_array();

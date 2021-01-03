@@ -409,3 +409,7 @@ function pagination($count,$uri,$uri_segment,$per_page){
 	];
 
 }
+function view($name)
+{
+	get_instance()->load->view($name);
+}
