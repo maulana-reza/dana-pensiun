@@ -13,6 +13,10 @@ class DASHBOARD_Controller extends MY_Controller
 				'url' => 'user/profile',
 			],
 			[
+				'label' => 'Pengumuman',
+				'url' => 'user/pengumuman/index',
+			],
+			[
 				'label' => 'Dashboard',
 				'url' => 'user/dashboard',
 			],
@@ -31,6 +35,14 @@ class DASHBOARD_Controller extends MY_Controller
 					[
 						'label' => 'Struktur Organisasi',
 						'url' => 'user/organisasi/struktur',
+					],
+					[
+						'label' => 'Visi Misi',
+						'url' => 'user/visi',
+					],
+					[
+						'label' => 'Motto',
+						'url' => 'user/motto',
 					],
 //						[
 //							'label' => 'Struktur Organisasi',

@@ -243,12 +243,14 @@ function sub_menus_dashboard($menus)
 	return implode('', $result);
 }
 
-function select($label, $list, $name, $select = "")
+function select($label, $list, $name, $selects)
 {
 	$select = '<select name="%s" class="form-control">%s</select>';
 	$option = '<option value="%s" %s>%s</option>';
+
 	foreach ($list as $item) {
-		$selected = @$item[$name[0]] == $select ? 'selected' : '';
+
+		$selected = @$item[$name[0]] == $selects ? 'selected' : '';
 		$data[] = sprintf($option, @$item[$name[0]], $selected, $item[$name[1]]);
 	}
 	if (!is_array(@$data)) {
@@ -311,12 +313,16 @@ function list_artikel($list)
 	foreach ($list as $item) {
 		$result[] = sprintf($article, article_link($item['id']),show_image($item['img']),show_image($item['img']), show_image($item['img']), article_link($item['id']), $item['name'],$item['created_at'], substr($item['description'], 0, 50),$item['created_at'],$item['first_name'].' '.$item['last_name'], article_link($item['id']));
 	}
-	return implode('', $result);
+	return @$result  ? implode('', $result) : '';
 }
 
 function article_link($id)
 {
 	return site_url('artikel/berita/view/' . $id);
+}
+function pengumuman_link($id)
+{
+	return site_url('pengumuman/view/' . $id);
 }
 function custom_date($f,$date)
 {
@@ -375,7 +381,7 @@ function pagination($count,$uri,$uri_segment,$per_page){
 	$config['per_page'] = $per_page;  //show record per halaman
 	$config["uri_segment"] = $uri_segment;  // uri parameter
 	$choice = $config["total_rows"] / $config["per_page"];
-	$config["num_links"] = floor($choice);
+//	$config["num_links"] = $choice;
 
 	// Membuat Style pagination untuk BootStrap v4
 	$config['first_link']       = 'First';

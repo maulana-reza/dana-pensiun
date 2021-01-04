@@ -12,11 +12,16 @@
 					<!-- form start -->
 					<?= form_open(); ?>
 					<div class="card-body">
-						<?= alert_dashboard(validation_errors(),'warning');?>
+						<?= alert_dashboard(validation_errors(),'info');?>
+
 						<div class="form-group">
-							<label for="exampleInputEmail1">Nama Jabatan</label>
-							<input type="text" class="form-control" id="exampleInputEmail1" name="name"
-								   value="<?= @$name; ?>">
+							<label for="exampleInputEmail1">Visi</label>
+							<?= form_textarea(['value' => @$visi,'class'=>'form-control','name' => 'visi']);?>
+						</div>
+
+						<div class="form-group">
+							<label for="exampleInputEmail1">Misi</label>
+							<?= form_textarea(['value' => @$misi,'class'=>'form-control','name' => 'misi']);?>
 						</div>
 					</div>
 					<!-- /.card-body -->

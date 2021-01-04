@@ -1,6 +1,6 @@
 <?php
 
-class Artikel extends DASHBOARD_Controller
+class Pengumuman extends DASHBOARD_Controller
 {
 	public $data = [];
 
@@ -10,6 +10,7 @@ class Artikel extends DASHBOARD_Controller
 		$this->load->database();
 		$this->load->library(['ion_auth', 'form_validation']);
 		$this->load->helper(['url', 'language']);
+		$this->addData('title','Pengumuman');
 
 		$this->form_validation->set_error_delimiters($this->config->item('error_start_delimiter', 'ion_auth'), $this->config->item('error_end_delimiter', 'ion_auth'));
 
@@ -19,7 +20,7 @@ class Artikel extends DASHBOARD_Controller
 	/**
 	 * Redirect if needed, otherwise display the user list
 	 */
-	public function berita($param = null)
+	public function index($param = null)
 	{
 //		halaman tambah
 		if ($param == "tambah") {
@@ -32,7 +33,7 @@ class Artikel extends DASHBOARD_Controller
 			if (request(['add'])) {
 				$this->update();
 			}
-			$this->addData('title','Edit Berita');
+			$this->addData('title','Edit Pengumuman');
 			$this->db->where('id',$this->uri->segment(5));
 			$this->addMultipleData( $this->db->get('article')->row_array());
 			$this->render('berita/tambah');
@@ -42,8 +43,9 @@ class Artikel extends DASHBOARD_Controller
 			add_alert([['message' => "Berhasil dihapus"]]);
 			$this->home();
 		} else {
-			$this->db->order_by('id','asc');
+
 			$this->db->where('type_id',$this->type_id());
+			$this->db->order_by('id','asc');
 			$this->addData('berita', $this->db->get('article')->result_array());
 			$this->render('berita/index');
 		}
@@ -72,11 +74,6 @@ class Artikel extends DASHBOARD_Controller
 		add_alert([['message' => "Berhasil ditambahkan"]]);
 		$this->home();
 	}
-
-	private function type_id(){
-		$data = $this->db->get_where('article_type',['name' => 'berita'])->row_array();
-		return $data['id'];
-	}
 	private function update()
 	{
 
@@ -99,10 +96,11 @@ class Artikel extends DASHBOARD_Controller
 		$this->home();
 
 	}
-	private function remove(){
-
+	private function type_id(){
+		$data = $this->db->get_where('article_type',['name' => 'pengumuman'])->row_array();
+		return $data['id'];
 	}
 	function home(){
-		redirect('user/artikel/berita');
+		redirect('user/pengumuman/index');
 	}
 }

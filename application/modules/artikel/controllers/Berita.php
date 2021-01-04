@@ -26,13 +26,17 @@ class Berita extends HOME_Controller
 	}
 	private function data()
 	{
+		$this->db->where('article.type_id',$this->type_id());
 		$this->db->select('article.*,users.first_name,users.last_name');
 		$this->db->join('users','users.id = article.user_id');
+		$this->db->group_by('article.id');
 		$count = $this->db->get('article')->num_rows();
-
 		$data = pagination($count,'artikel/berita/index',4,5);
+
+		$this->db->where('article.type_id',$this->type_id());
 		$this->db->select('article.*,users.first_name,users.last_name');
 		$this->db->join('users','users.id = article.user_id');
+		$this->db->group_by('article.id');
 		$article = $this->db->get('article',5,$data['page'])->result_array();
 		$this->addData('article',$article);
 		$this->addData('pagination',$data['pagination']);
@@ -46,5 +50,10 @@ class Berita extends HOME_Controller
 		$this->addMultipleData($this->db->get('article')->row_array());
 		$this->addData('title','Berita');
 		$this->render('view');
+	}
+
+	private function type_id(){
+		$data = $this->db->get_where('article_type',['name' => 'berita'])->row_array();
+		return (int)$data['id'];
 	}
 }

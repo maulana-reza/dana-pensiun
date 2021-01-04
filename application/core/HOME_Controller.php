@@ -24,21 +24,68 @@ class HOME_Controller extends MY_Controller
 				]
 			],
 			[
+				'label' => 'galeri',
+				'url' => 'home',
+			],
+			[
+				'label' => 'Layanan',
+				'sub' => [
+					[
+						'label' => 'Peraturan',
+						'url' => 'layanan/peraturan',
+					],
+					[
+						'label' => 'Panduan',
+						'url' => 'layanan/panduan',
+					],
+					[
+						'label' => 'Sosialisasi',
+						'url' => 'layanan/sosialisasi',
+					],
+					[
+						'label' => 'Laporan Meninggal Dunia',
+						'url' => 'layanan/sosialisasi',
+					],
+					[
+						'label' => 'Cetak e-spt',
+						'url' => 'layanan/e_spt',
+					],
+					[
+						'label' => 'Update Data Diri',
+						'url' => 'layanan/e_spt',
+					],
+					[
+						'label' => 'Simulasi Manfaat Pensiun',
+						'url' => 'layanan/simulasi',
+					],
+
+					[
+						'label' => 'Simulasi Manfaat Pensiun',
+						'url' => 'layanan/simulasi',
+					],
+
+					[
+						'label' => 'Cetak Kartu',
+						'url' => 'layanan/cetak',
+					],
+
+				]
+			],
+			[
 				'label' => 'Tentang Kami',
 				'sub' => [
 					[
 						'label' => 'Struktur Organisasi',
 						'url' => 'organisasi/struktur',
 					],
-//						[
-//							'label' => 'Struktur Organisasi',
-//							'sub' => [
-//								[
-//									'label' => 'Struktur Organisasi',
-//									'url' => 'organisasi/struktur',
-//								],
-//							],
-//						],
+					[
+						'label' => 'Visi Misi',
+						'url' => 'tentang/visi_misi',
+					],
+					[
+						'label' => 'Motto',
+						'url' => 'tentang/motto',
+					],
 				],
 			],
 		]);

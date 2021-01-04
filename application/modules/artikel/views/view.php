@@ -34,7 +34,8 @@
 						<div class="post-content">
 							<h2 class="entry-title"><?= @$name;?></h2>
 							<span class="vcard" style="display: none;"><span class="fn"><a href="../../../author/admin_dpp/index.html" title="Pos-pos oleh " rel="author"></a></span></span><span class="updated" style="display:none">2020-11-06T17:30:16+00:00</span>        <div class="post-meta">
-								<span class="meta-author"><i class="fa fa-user"></i> By <?= $first_name.' '.$last_name;?></span>                            <span class="meta-cats"><i class="fa fa-folder-open"></i> <a href="../../../kategori/berita/index.html" rel="category tag">Berita</a></span>
+								<span class="meta-author"><i class="fa fa-user"></i> By <?= $first_name.' '.$last_name;?></span>
+<!--								<span class="meta-cats"><i class="fa fa-folder-open"></i></span>-->
 							</div>
 
 							<div class="entry-content">

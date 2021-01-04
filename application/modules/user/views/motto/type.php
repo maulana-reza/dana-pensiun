@@ -14,7 +14,7 @@
 					<div class="card-body">
 						<?= alert_dashboard(validation_errors(),'warning');?>
 						<div class="form-group">
-							<label for="exampleInputEmail1">Nama Jabatan</label>
+							<label for="exampleInputEmail1">Nama Tipe Motto</label>
 							<input type="text" class="form-control" id="exampleInputEmail1" name="name"
 								   value="<?= @$name; ?>">
 						</div>
