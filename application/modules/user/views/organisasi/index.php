@@ -25,8 +25,8 @@
 							<tbody>
 							<?php foreach ($struktur as $item):?>
 								<tr>
-									<td><?= $item['description'] ;?></td>
 									<td><img class="w-25" src="<?= show_image($item['img']);?>" alt=""></td>
+									<td><?= $item['description'] ;?></td>
 									<td><?= $item['jabatan_name'];?></td>
 									<td><?=show_aksi($item['id']);?></td>
 								</tr>
